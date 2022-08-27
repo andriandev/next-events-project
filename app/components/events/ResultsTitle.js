@@ -1,0 +1,20 @@
+import Button from '../shared/button';
+import classes from './ResultsTitle.module.css';
+
+function ResultsTitle(props) {
+  const { date } = props;
+
+  const humanReadableDate = new Date(date).toLocaleDateString('id-ID', {
+    month: 'long',
+    year: 'numeric',
+  });
+
+  return (
+    <section className={classes.title}>
+      <h1>Events in {humanReadableDate}</h1>
+      <Button link="/events">Show all events</Button>
+    </section>
+  );
+}
+
+export default ResultsTitle;
